@@ -1,0 +1,16 @@
+<div class="grid">
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>
+
+<div class="grid" style="background-color: #fff;">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <nx-line-chart [settings]="settings">
+        </nx-line-chart>
+    </div>
+    <div class="col-2">
+      <button (click)="btnLoading()">Poom</button>
+    </div>
+  </div>

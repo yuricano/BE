@@ -1,0 +1,75 @@
+<div class="headerContainer">
+  <h1 class="title-form title">Nuevo Cliente</h1>
+</div>
+
+<div>
+    <form [formGroup]="clientsForm">
+        <div class="grid-2_xs-1">
+          <div class="col">
+              <label for="">Nombre:</label>
+          </div>
+          <div class="col">
+            <input type="text" formControlName="name">
+          </div>
+          <div class="col"><label for="">Email:</label></div>
+          <div class="col">
+            <input type="text" formControlName="lastName" required>
+            <div *ngIf="clientsForm.controls['lastName'].errors && !clientsForm.controls['lastName'].pristine" class="oss-control error-msg">
+              <div [hidden]="!clientsForm.controls['lastName'].errors.required" class="error">Email is required.</div>
+              <div [hidden]="!clientsForm.controls['lastName'].errors.patternInvalid" class="error">Email is invalid.</div>
+            </div>
+          </div>
+          <div class="col">
+              <label for="">Edad:</label>
+          </div>
+          <div class="col">
+              <input type="text" formControlName="age">
+          </div>
+
+
+        <div class="col">
+          <label for="">Tel:</label>
+        </div>
+        <div class="col">
+          <input type="text" formControlName="phoneNumber">
+        </div>
+        <div class="col">
+          <label for="">Dirección:</label>
+        </div>
+        <div class="col">
+          <input type="text" formControlName="address">
+        </div>
+        <div class="col">
+          <label for="">Colonia:</label>
+        </div>
+        <div class="col">
+          <input type="text" formControlName="addressBo">
+        </div>
+        <div class="col">
+          <label for="">Ciudad:</label>
+        </div>
+        <div class="col">
+          <input type="text" formControlName="city">
+        </div>
+        <div class="col">
+          <label for="">Estado:</label>
+        </div>
+        <div class="col">
+          <input type="text" formControlName="state">
+        </div>
+        <div class="col">
+          <label for="">CP:</label>
+        </div>
+        <div class="col">
+          <input type="text" formControlName="zip">
+        </div>
+      </div>
+
+
+      <div>
+        <button type="submit" [disabled]="clientsForm.invalid" (click)="onSubmit(clientsForm)" class="primary guardar">Guardar</button>
+        <a class="header" routerLink="/solicitud/clients"><button type="button" class="default">Cancelar</button></a>
+      </div>
+    </form>
+</div>
+

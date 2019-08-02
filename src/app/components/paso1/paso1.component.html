@@ -1,0 +1,120 @@
+<div class="grid">
+  <div class="col-12">
+    <h1 class="oss-titulos-left">
+      Pagar Telmex
+    </h1>
+  </div>
+  <div class="col-6_sm-12">
+    <h3 class="oss-desc-left">Código de barras</h3>
+    <input type="text" placeholder="123456789">
+  </div>
+  <div class="col-2_sm-12">
+    <h3 class="oss-desc-left">
+      Dígito verificador
+    </h3>
+    <input type="text" placeholder="0">
+  </div>
+  <div class="col-3"></div>
+  <div class="col-6">
+    <h3 class="oss-desc-left">
+      Desde la cuenta
+    </h3>
+
+    <app-selectm></app-selectm>
+
+  </div>
+</div>
+<div class="grid">
+  <div class="col-12">
+    <h3 class="">
+      ¿Quiéres domiciliar tu pago?
+    </h3>
+  </div>
+  <div class="col-12">
+    NO  <mat-slide-toggle>SI</mat-slide-toggle>
+  </div>
+  <div class="col-12">
+    <hr>
+  </div>
+  <div class="col-12">
+    <a routerLink="../paso2">
+      <button class="primary">Continuar</button>
+    </a>
+
+    <a routerLink="../pagos">
+      <button class="primary outline">Cancelar</button>
+      <!-- <mat-icon>shopping_cart</mat-icon> -->
+    </a>
+
+
+    <div *ngIf="muestraDiv" class="col-12 oss-mail">
+      <form [formGroup]="correoForm">
+
+        <div>
+          <mat-form-field class="">
+            <button  mat-button *ngIf="email" matSuffix mat-icon-button aria-label="Borrar" (click)="email=''">
+              <mat-icon>close</mat-icon>
+            </button>
+            <input class="input-focus-none" matInput
+                   type="text"
+                   formControlName="correo"
+                   placeholder="Agregar correo"
+                   [(ngModel)]="email">
+          </mat-form-field>
+
+        <div class="grid-2">
+          <div class="col">  <div *ngIf="correoForm.controls['correo'].errors && !correoForm.controls['correo'].pristine" class="oss-control error-msg">
+              <div [hidden]="!correoForm.controls['correo'].errors.patternInvalid" class="oss-error-message">Correo invalido.</div>
+            </div></div>
+          <div class="col oss-desc-small-right">
+            <label> Enter = Guardar / ESC = Cancelar</label>
+          </div>
+        </div>
+
+        </div>
+      </form>
+    </div>
+
+
+            <a class="oss-desc-small-w">
+              <button class="primary"  mat-icon-button
+                      (click)="openDialog()"
+                      (mouseover)="onMouseOver()"
+                      (mouseout)="onMouseOut()"
+                      [ngClass]="{si: estadoPositivo, no: !estadoPositivo}">
+                {{texto}}
+              </button>
+            </a>
+
+    <i class="material-icons oss-icons">shopping_cart</i>
+  </div>
+
+  <!-- <div *ngIf="muestraDiv" class="col-6">
+    <form [formGroup]="correoForm">
+
+      <div>
+        <mat-form-field class="">
+          <button  mat-button *ngIf="email" matSuffix mat-icon-button aria-label="Borrar" (click)="email=''">
+            <mat-icon>close</mat-icon>
+          </button>
+          <input class="input-focus-none" matInput
+                 type="text"
+                 formControlName="correo"
+                 placeholder="Agregar correo"
+                 [(ngModel)]="email">
+        </mat-form-field>
+
+      <div class="grid-2">
+        <div class="col">  <div *ngIf="correoForm.controls['correo'].errors && !correoForm.controls['correo'].pristine" class="oss-control error-msg">
+            <div [hidden]="!correoForm.controls['correo'].errors.patternInvalid" class="oss-error-message">Correo invalido.</div>
+          </div></div>
+        <div class="col oss-desc-small-right">
+          <label> Enter = Guardar / ESC = Cancelar</label>
+        </div>
+      </div>
+
+      </div>
+    </form>
+  </div> -->
+
+</div>

@@ -1,0 +1,55 @@
+<div class="headerContainer">
+    <h1 class="title-form title">Edicion Cliente</h1>
+  </div>
+
+  <div>
+      <form novalidate  [formGroup]="clientsForm">
+        <div class="form-row-column">
+          <label for="">Nombre:</label>
+          <input type="text" formControlName="name">
+        </div>
+        <div class="form-row-column">
+          <label for="">Email:</label>
+          <input type="text" formControlName="lastName">
+        </div>
+        <div class="form-row-column">
+          <label for="">Edad:</label>
+          <input type="text" formControlName="age">
+        </div>
+        <div class="form-row-column">
+          <label for="">Tel:</label>
+          <input type="text" formControlName="phoneNumber">
+        </div>
+        <div class="form-row-column">
+          <label for="">Dirección:</label>
+          <input type="text" formControlName="address">
+        </div>
+        <div class="form-row-column">
+          <label for="">Colonia:</label>
+          <input type="text" formControlName="addressBo">
+        </div>
+        <div class="form-row-column">
+          <label for="">Ciudad:</label>
+          <input type="text" formControlName="city">
+        </div>
+        <div class="form-row-column">
+          <label for="">Estado:</label>
+          <input type="text" formControlName="state">
+        </div>
+        <div class="form-row-column">
+          <label for="">CP:</label>
+          <input type="text" formControlName="zip">
+        </div>
+
+        <div formGroupName="messages">
+          <input type="text" formControlName="title">
+        </div>
+
+
+        <div>
+          <button type="submit" (click)="onSubmit(clientsForm)" class="primary guardar">Guardar</button>
+          <a class="header" routerLink="/"><button type="button" class="default">Cancelar</button></a>
+        </div>
+      </form>
+  </div>
+

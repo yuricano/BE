@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\components",
+    "\\src\\app\\components\\login",
+    "\\src\\app\\components\\paso1"
+  ],
+  "SelectedNode": "\\src\\app\\components\\login\\login.component.html",
+  "PreviewInSolutionExplorer": false
+}

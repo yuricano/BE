@@ -1,0 +1,69 @@
+<div class="headerContainer">
+  <h1 class="title-form title">Clientes</h1>
+
+  <div>
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker #picker></mat-datepicker>
+  </div>
+  <button mat-raised-button (click)="picker.open()">Open</button>
+
+  <mat-form-field>
+    <mat-select placeholder="Favorite food">
+      <mat-option *ngFor="let food of foods" [value]="food.value">
+        {{ food.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</div>
+<div class="oss-simple-table">
+  <div class="oss-table-header">
+    <div class="oss-header-th">
+      <h5>{{ tableConfig.header.id }}</h5>
+      <h5>{{ tableConfig.header.name }}</h5>
+      <h5>{{ tableConfig.header.email }}</h5>
+      <h5>{{ tableConfig.header.age }}</h5>
+      <h5>{{ tableConfig.header.phoneNumber }}</h5>
+      <h5></h5>
+      <h5></h5>
+    </div>
+  </div>
+
+  <div class="oss-table-body">
+    <ng-container *ngFor="let r of tableRows">
+    <div class="oss-table-tr">
+      <div>
+        {{r.id}}
+      </div>
+      <div>
+        {{r.name}}
+      </div>
+      <div>
+        {{r.email}}
+      </div>
+      <div>
+        {{r.age}}
+      </div>
+      <div>
+        {{r.telephone}}
+      </div>
+      <div>
+        <button class="primary sm" routerLink="/solicitud/clients/{{ r.id }}">
+          <i class="icon ion-edit"></i>
+        </button>
+      </div>
+      <div>
+        <button class="primary sm" (click)="removeClient(r.id)">
+          <i class="icon ion-ios-trash"></i>
+        </button>
+      </div>
+    </div>
+    </ng-container>
+  </div>
+</div> <!-- .table-body -->
+
+<div>
+    <br>
+    <a class="header" routerLink="./new"><button type="button" class="primary">Nuevo</button></a>
+    <a class="header" routerLink="/"><button type="button" class="default">Cancelar</button></a>
+</div>

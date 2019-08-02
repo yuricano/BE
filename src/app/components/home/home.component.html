@@ -1,0 +1,28 @@
+<p>
+  home works!!!!!!
+</p>
+
+<div class="grid">
+  <div class="col-3">
+    <mat-form-field class="oss-mat-select">
+      <mat-select placeholder="JUst a demo" [(value)]="sel">
+        <mat-select-trigger>
+          {{sel.description}}
+        </mat-select-trigger>
+        <mat-option *ngFor="let item of collection" [value]="item">
+          <h5>{{ item.description }}</h5>
+          <div>{{ item.rfc }}</div>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+  <div class="col-6">
+    <nx-select-editable [collection]="collection" (saveEvent)="saveEvent" (changeEvent)="changeEvent">
+    </nx-select-editable>
+  </div>
+  <div class="col3">
+    <button (click)="alertData()">ok</button>
+
+  </div>
+</div>
