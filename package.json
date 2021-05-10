@@ -26,7 +26,7 @@
     "@angular/router": "^5.2.0",
     "chart.js": "^2.7.2",
     "core-js": "^2.4.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.21",
     "moment": "^2.22.1",
     "nx-controls-common": "0.0.98",
     "nx-core": "^1.0.59",
